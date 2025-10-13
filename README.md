@@ -1,4 +1,4 @@
-## Hi there 👋
+##https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=27&pause=1000&color=2E9DF7&center=true&width=435&lines=Hi+guys+%F0%9F%91%8B;I+am+Abel+Jones+Mathew+;Student+at+SJCET+PALAI;CSE+(Sem+1)
 
 <!--
 **AbelJonesMathew/AbelJonesMathew** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
