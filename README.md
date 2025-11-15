@@ -1,4 +1,4 @@
-
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Titan+One&pause=1000&color=F7F7F7&center=true&width=435&lines=Hi+guyss;I+am+Abel+Jones+Mathew;Currently+doing+my+B.tech+in;Saint+Joseph%60s+College%2C+Palai" alt="Typing SVG" /></a>
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif"/>
 
 <p align="left">
