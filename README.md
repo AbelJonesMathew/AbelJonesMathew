@@ -14,6 +14,12 @@ Here are some ideas to get you started:
              Contact:8590989997
 - 😄 Pronouns: ...
 - ⚡ Fun fact: A crocodile cannot stick its tongue out
+
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif"/>
+
+<p align="left">
+</p>
+
 ### Connect with Me:
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](mylink)
 [![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/abel_jones_2007/?next=%2F&hl=en)
