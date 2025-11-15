@@ -10,7 +10,7 @@ Here are some ideas to get you started:
 - 🤔 I’m looking for help with C++,C,JAVA,PYTHON
 - 💬 Ask me about Python
 - 📫 How to reach me:
-             Instagram:abel_jones_2007
+             Instagram:abel_jones_2007,
              Contact:8590989997
 - 😄 Pronouns: ...
 - ⚡ Fun fact: A crocodile cannot stick its tongue out
