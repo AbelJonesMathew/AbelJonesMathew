@@ -29,13 +29,13 @@
 
 <!-- Interactive Social Buttons (Replace links with your actual URLs) -->
 <p align="center">
-  <a href="mailto:your-email@example.com">
+  <a href="mailto:abeljonessjcet@gmail.com">
     <img src="btn-email.svg" height="38" alt="Email Me" />
   </a>
-  <a href="https://linkedin.com/in/your-profile" target="_blank">
+  <a href="https://www.linkedin.com/in/abel-jones-mathew-27662837a/" target="_blank">
     <img src="btn-linkedin.svg" height="38" alt="LinkedIn" />
   </a>
-  <a href="https://your-portfolio-link.com" target="_blank">
+  <a href="https://video-portfolio-lemon-nine.vercel.app/" target="_blank">
     <img src="btn-portfolio.svg" height="38" alt="Portfolio" />
   </a>
   <a href="https://github.com/AbelJonesMathew" target="_blank">
