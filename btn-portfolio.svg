@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 50" width="180" height="50">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="btn-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#01081A" />
+      <stop offset="100%" stop-color="#021C4F" />
+    </linearGradient>
+
+    <!-- Neon Glow Filter -->
+    <filter id="btn-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    .text-btn {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      fill: #ffffff;
+      letter-spacing: 1.5px;
+    }
+    
+    /* Flowing neon border animation */
+    @keyframes border-flow {
+      0% { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: -460; }
+    }
+    .flowing-border {
+      stroke-dasharray: 100 360;
+      stroke-dashoffset: 0;
+      animation: border-flow 3.5s linear infinite;
+    }
+    
+    /* Subtle hover pulse styling */
+    @keyframes pulse-light {
+      0%, 100% { opacity: 0.8; filter: drop-shadow(0 0 2px #2E79FF); }
+      50% { opacity: 1; filter: drop-shadow(0 0 8px #2E79FF); }
+    }
+    .glow-element {
+      animation: pulse-light 3s ease-in-out infinite;
+    }
+  </style>
+
+  <!-- Button Card Backing -->
+  <rect x="1" y="1" width="178" height="48" rx="24" fill="url(#btn-bg)" stroke="rgba(255,255,255,0.05)" stroke-width="1.5" />
+  
+  <!-- Flowing Neon Path -->
+  <rect x="1" y="1" width="178" height="48" rx="24" fill="none" stroke="#2E79FF" stroke-width="2.5" class="flowing-border glow-element" filter="url(#btn-glow)" />
+
+  <!-- Center Group -->
+  <g transform="translate(25, 0)">
+    <!-- Icon -->
+    <g transform="translate(0, 15)" fill="#2E79FF" class="glow-element">
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.53c-.26-.81-1-1.4-1.9-1.4h-1v-3c0-.55-.45-1-1-1h-6v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.4z" fill="#2E79FF" />
+    </g>
+    <!-- Label -->
+    <text x="35" y="30" class="text-btn">PORTFOLIO</text>
+  </g>
+</svg>

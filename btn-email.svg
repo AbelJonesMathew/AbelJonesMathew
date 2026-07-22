@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 50" width="180" height="50">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="btn-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#01081A" />
+      <stop offset="100%" stop-color="#021C4F" />
+    </linearGradient>
+
+    <!-- Neon Glow Filter -->
+    <filter id="btn-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    .text-btn {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      fill: #ffffff;
+      letter-spacing: 1.5px;
+    }
+    
+    /* Flowing neon border animation */
+    @keyframes border-flow {
+      0% { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: -460; }
+    }
+    .flowing-border {
+      stroke-dasharray: 100 360;
+      stroke-dashoffset: 0;
+      animation: border-flow 3.5s linear infinite;
+    }
+    
+    /* Subtle hover pulse styling */
+    @keyframes pulse-light {
+      0%, 100% { opacity: 0.8; filter: drop-shadow(0 0 2px #FF5D82); }
+      50% { opacity: 1; filter: drop-shadow(0 0 8px #FF5D82); }
+    }
+    .glow-element {
+      animation: pulse-light 3s ease-in-out infinite;
+    }
+  </style>
+
+  <!-- Button Card Backing -->
+  <rect x="1" y="1" width="178" height="48" rx="24" fill="url(#btn-bg)" stroke="rgba(255,255,255,0.05)" stroke-width="1.5" />
+  
+  <!-- Flowing Neon Path -->
+  <rect x="1" y="1" width="178" height="48" rx="24" fill="none" stroke="#FF5D82" stroke-width="2.5" class="flowing-border glow-element" filter="url(#btn-glow)" />
+
+  <!-- Center Group -->
+  <g transform="translate(25, 0)">
+    <!-- Icon -->
+    <g transform="translate(0, 15)" fill="#FF5D82" class="glow-element">
+      <path d="M0 3a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3zm2 2v9h14V5l-7 4.5L2 5z" fill="#FF5D82" />
+    </g>
+    <!-- Label -->
+    <text x="35" y="30" class="text-btn">EMAIL ME</text>
+  </g>
+</svg>
