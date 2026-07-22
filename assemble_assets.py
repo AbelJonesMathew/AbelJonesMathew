@@ -97,9 +97,9 @@ def main():
         with open("real_stats.json", "r") as f:
             stats_data = json.load(f)
             
-    public_repos = stats_data.get("public_repos", 29)
-    followers = stats_data.get("followers", 75)
-    contributions = stats_data.get("contributions", 354)
+    public_repos = stats_data.get("public_repos", 5)
+    followers = stats_data.get("followers", 5)
+    contributions = stats_data.get("contributions", 25)
     
     # 1. CREATE banner.svg (Dark Mode Ultramarine/Lavender)
     banner_dark_svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 740" width="1280" height="740">
