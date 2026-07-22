@@ -1,1 +1,11 @@
-{"public_repos": 5, "followers": 5, "contributions": 23, "languages": {"Python": 32.0, "HTML": 20.0, "CSS": 20.0, "C": 12.0, "TypeScript": 4.0}}
+{
+    "public_repos": 5,
+    "followers": 6,
+    "contributions": 25,
+    "languages": {
+        "Python": 25.0,
+        "HTML": 25.0,
+        "C": 25.0,
+        "JavaScript": 25.0
+    }
+}

@@ -97,9 +97,9 @@ def main():
         with open("real_stats.json", "r") as f:
             stats_data = json.load(f)
             
-    public_repos = stats_data.get("public_repos", 5)
-    followers = stats_data.get("followers", 5)
-    contributions = stats_data.get("contributions", 25)
+    public_repos = stats_data.get("public_repos", 29)
+    followers = stats_data.get("followers", 75)
+    contributions = stats_data.get("contributions", 354)
     
     # 1. CREATE banner.svg (Dark Mode Ultramarine/Lavender)
     banner_dark_svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 740" width="1280" height="740">
@@ -1331,7 +1331,73 @@ def main():
     print("stats.svg successfully generated.")
 
     # 5. CREATE langs.svg (Real top languages from actual repos)
-    langs_svg = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 200" width="450" height="200">
+    languages = stats_data.get("languages", {})
+    if not languages:
+        languages = {
+            "Python": 32.0,
+            "HTML": 20.0,
+            "CSS": 20.0,
+            "C": 12.0,
+            "TypeScript": 4.0
+        }
+    
+    # Sort and take top 5
+    sorted_langs = sorted(languages.items(), key=lambda x: x[1], reverse=True)[:5]
+    
+    # Map colors matching the dark/neon theme
+    color_map = {
+        "Python": "#C50337",
+        "HTML": "#2E79FF",
+        "CSS": "#FF5D82",
+        "JavaScript": "#FFBC0A",
+        "TypeScript": "#007ACC",
+        "C": "#FF5D82",
+        "C++": "#F34B7D",
+        "Java": "#B07219",
+        "Rust": "#DEA584",
+        "Go": "#00ADD8"
+    }
+    theme_colors = ["#2E79FF", "#C50337", "#FF5D82", "#C50337", "#2E79FF"]
+    
+    keyframes = []
+    classes = []
+    items_svg = []
+    
+    for idx, (lang, pct) in enumerate(sorted_langs):
+        width_px = round((pct / 100) * 240)
+        keyframes.append(f"    @keyframes load-bar-{idx} {{ from {{ width: 0px; }} to {{ width: {width_px}px; }} }}")
+        classes.append(f"    .bar-{idx} {{ animation: load-bar-{idx} 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards; width: 0; }}")
+        
+        color = color_map.get(lang, theme_colors[idx % len(theme_colors)])
+        y_pos = 68 + idx * 26
+        
+        items_svg.append(f"""    <!-- {lang} -->
+    <g class="lang-item item-{idx+1}" transform="translate(0, {y_pos})">
+      <text x="0" y="0" font-size="12" font-weight="bold" fill="#ffffff">{lang}</text>
+      <rect x="90" y="-10" width="240" height="8" rx="4" fill="rgba(255,255,255,0.05)" />
+      <rect x="90" y="-10" height="8" rx="4" fill="{color}" class="bar-{idx}" filter="url(#lang-glow)" />
+      <text x="390" y="0" font-size="12" font-weight="bold" fill="{color}" class="font-mono" text-anchor="end">{pct}%</text>
+    </g>""")
+
+    # If we have less than 5 languages, fill the remaining slots with Figma Design or placeholders
+    if len(sorted_langs) < 5:
+        idx = len(sorted_langs)
+        y_pos = 68 + idx * 26
+        keyframes.append(f"    @keyframes load-bar-figma {{ from {{ width: 0px; }} to {{ width: 132px; }} }}")
+        classes.append(f"    .bar-figma {{ animation: load-bar-figma 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards; width: 0; }}")
+        items_svg.append(f"""    <!-- Figma UI/UX -->
+    <g class="lang-item item-5" transform="translate(0, {y_pos})">
+      <text x="0" y="0" font-size="12" font-weight="bold" fill="#ffffff">Figma Design</text>
+      <rect x="90" y="-10" width="240" height="8" rx="4" fill="rgba(255,255,255,0.05)" />
+      <rect x="90" y="-10" height="8" rx="4" fill="#2E79FF" class="bar-figma" filter="url(#lang-glow)" />
+      <text x="390" y="0" font-size="12" font-weight="bold" fill="#2E79FF" class="font-mono" text-anchor="end">Design</text>
+    </g>""")
+        
+    keyframes_str = "\n".join(keyframes)
+    classes_str = "\n".join(classes)
+    items_str = "\n\n".join(items_svg)
+    
+    langs_svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 200" width="450" height="200">
   <defs>
     <!-- Background Gradient -->
     <linearGradient id="card-bg" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -1356,33 +1422,25 @@ def main():
   </defs>
 
   <style>
-    .font-sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
-    .font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .font-sans {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }}
+    .font-mono {{ font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }}
     
     /* Loading language progress bars based on actual repo count */
-    @keyframes load-bar-py { from { width: 0px; } to { width: 154px; } }
-    @keyframes load-bar-htmlcss { from { width: 0px; } to { width: 220px; } }
-    @keyframes load-bar-c { from { width: 0px; } to { width: 66px; } }
-    @keyframes load-bar-js { from { width: 0px; } to { width: 44px; } }
-    @keyframes load-bar-figma { from { width: 0px; } to { width: 132px; } }
+{keyframes_str}
 
-    .bar-py { animation: load-bar-py 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards; width: 0; }
-    .bar-htmlcss { animation: load-bar-htmlcss 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards; width: 0; }
-    .bar-c { animation: load-bar-c 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards; width: 0; }
-    .bar-js { animation: load-bar-js 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards; width: 0; }
-    .bar-figma { animation: load-bar-figma 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards; width: 0; }
+{classes_str}
     
     /* Fading in text delays */
-    @keyframes fade-in {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    .lang-item { opacity: 0; animation: fade-in 0.5s ease-out forwards; }
-    .item-1 { animation-delay: 0.1s; }
-    .item-2 { animation-delay: 0.2s; }
-    .item-3 { animation-delay: 0.3s; }
-    .item-4 { animation-delay: 0.4s; }
-    .item-5 { animation-delay: 0.5s; }
+    @keyframes fade-in {{
+      from {{ opacity: 0; }}
+      to {{ opacity: 1; }}
+    }}
+    .lang-item {{ opacity: 0; animation: fade-in 0.5s ease-out forwards; }}
+    .item-1 {{ animation-delay: 0.1s; }}
+    .item-2 {{ animation-delay: 0.2s; }}
+    .item-3 {{ animation-delay: 0.3s; }}
+    .item-4 {{ animation-delay: 0.4s; }}
+    .item-5 {{ animation-delay: 0.5s; }}
   </style>
 
   <!-- Card Body -->
@@ -1393,45 +1451,7 @@ def main():
     <text x="0" y="32" font-size="14" font-weight="900" fill="#ffffff" letter-spacing="1.5">REAL TOP LANGUAGES</text>
     <line x1="0" y1="42" x2="390" y2="42" stroke="#2E79FF" stroke-width="1" opacity="0.3" />
 
-    <!-- HTML & CSS -->
-    <g class="lang-item item-1" transform="translate(0, 68)">
-      <text x="0" y="0" font-size="12" font-weight="bold" fill="#ffffff">HTML &amp; CSS</text>
-      <rect x="90" y="-10" width="240" height="8" rx="4" fill="rgba(255,255,255,0.05)" />
-      <rect x="90" y="-10" height="8" rx="4" fill="#2E79FF" class="bar-htmlcss" filter="url(#lang-glow)" />
-      <text x="390" y="0" font-size="12" font-weight="bold" fill="#2E79FF" class="font-mono" text-anchor="end">45.5%</text>
-    </g>
-
-    <!-- Python -->
-    <g class="lang-item item-2" transform="translate(0, 94)">
-      <text x="0" y="0" font-size="12" font-weight="bold" fill="#ffffff">Python</text>
-      <rect x="90" y="-10" width="240" height="8" rx="4" fill="rgba(255,255,255,0.05)" />
-      <rect x="90" y="-10" height="8" rx="4" fill="#C50337" class="bar-py" filter="url(#lang-glow)" />
-      <text x="390" y="0" font-size="12" font-weight="bold" fill="#C50337" class="font-mono" text-anchor="end">31.8%</text>
-    </g>
-
-    <!-- C -->
-    <g class="lang-item item-3" transform="translate(0, 120)">
-      <text x="0" y="0" font-size="12" font-weight="bold" fill="#ffffff">C / C++</text>
-      <rect x="90" y="-10" width="240" height="8" rx="4" fill="rgba(255,255,255,0.05)" />
-      <rect x="90" y="-10" height="8" rx="4" fill="#FF5D82" class="bar-c" filter="url(#lang-glow)" />
-      <text x="390" y="0" font-size="12" font-weight="bold" fill="#FF5D82" class="font-mono" text-anchor="end">13.6%</text>
-    </g>
-
-    <!-- JavaScript / TypeScript -->
-    <g class="lang-item item-4" transform="translate(0, 146)">
-      <text x="0" y="0" font-size="12" font-weight="bold" fill="#ffffff">JS / TS</text>
-      <rect x="90" y="-10" width="240" height="8" rx="4" fill="rgba(255,255,255,0.05)" />
-      <rect x="90" y="-10" height="8" rx="4" fill="#C50337" class="bar-js" filter="url(#lang-glow)" />
-      <text x="390" y="0" font-size="12" font-weight="bold" fill="#C50337" class="font-mono" text-anchor="end">9.1%</text>
-    </g>
-
-    <!-- Figma UI/UX -->
-    <g class="lang-item item-5" transform="translate(0, 172)">
-      <text x="0" y="0" font-size="12" font-weight="bold" fill="#ffffff">Figma Design</text>
-      <rect x="90" y="-10" width="240" height="8" rx="4" fill="rgba(255,255,255,0.05)" />
-      <rect x="90" y="-10" height="8" rx="4" fill="#2E79FF" class="bar-figma" filter="url(#lang-glow)" />
-      <text x="390" y="0" font-size="12" font-weight="bold" fill="#2E79FF" class="font-mono" text-anchor="end">Design</text>
-    </g>
+{items_str}
   </g>
 </svg>"""
     with open("langs.svg", "w", encoding="utf-8") as f:

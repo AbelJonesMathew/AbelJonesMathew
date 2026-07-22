@@ -27,16 +27,16 @@
     .font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
     
     /* Loading language progress bars based on actual repo count */
-    @keyframes load-bar-py { from { width: 0px; } to { width: 154px; } }
-    @keyframes load-bar-htmlcss { from { width: 0px; } to { width: 220px; } }
-    @keyframes load-bar-c { from { width: 0px; } to { width: 66px; } }
-    @keyframes load-bar-js { from { width: 0px; } to { width: 44px; } }
+    @keyframes load-bar-0 { from { width: 0px; } to { width: 60px; } }
+    @keyframes load-bar-1 { from { width: 0px; } to { width: 60px; } }
+    @keyframes load-bar-2 { from { width: 0px; } to { width: 60px; } }
+    @keyframes load-bar-3 { from { width: 0px; } to { width: 60px; } }
     @keyframes load-bar-figma { from { width: 0px; } to { width: 132px; } }
 
-    .bar-py { animation: load-bar-py 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards; width: 0; }
-    .bar-htmlcss { animation: load-bar-htmlcss 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards; width: 0; }
-    .bar-c { animation: load-bar-c 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards; width: 0; }
-    .bar-js { animation: load-bar-js 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards; width: 0; }
+    .bar-0 { animation: load-bar-0 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards; width: 0; }
+    .bar-1 { animation: load-bar-1 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards; width: 0; }
+    .bar-2 { animation: load-bar-2 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards; width: 0; }
+    .bar-3 { animation: load-bar-3 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards; width: 0; }
     .bar-figma { animation: load-bar-figma 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards; width: 0; }
     
     /* Fading in text delays */
@@ -60,36 +60,36 @@
     <text x="0" y="32" font-size="14" font-weight="900" fill="#ffffff" letter-spacing="1.5">REAL TOP LANGUAGES</text>
     <line x1="0" y1="42" x2="390" y2="42" stroke="#2E79FF" stroke-width="1" opacity="0.3" />
 
-    <!-- HTML & CSS -->
-    <g class="lang-item item-1" transform="translate(0, 68)">
-      <text x="0" y="0" font-size="12" font-weight="bold" fill="#ffffff">HTML &amp; CSS</text>
-      <rect x="90" y="-10" width="240" height="8" rx="4" fill="rgba(255,255,255,0.05)" />
-      <rect x="90" y="-10" height="8" rx="4" fill="#2E79FF" class="bar-htmlcss" filter="url(#lang-glow)" />
-      <text x="390" y="0" font-size="12" font-weight="bold" fill="#2E79FF" class="font-mono" text-anchor="end">45.5%</text>
-    </g>
-
     <!-- Python -->
-    <g class="lang-item item-2" transform="translate(0, 94)">
+    <g class="lang-item item-1" transform="translate(0, 68)">
       <text x="0" y="0" font-size="12" font-weight="bold" fill="#ffffff">Python</text>
       <rect x="90" y="-10" width="240" height="8" rx="4" fill="rgba(255,255,255,0.05)" />
-      <rect x="90" y="-10" height="8" rx="4" fill="#C50337" class="bar-py" filter="url(#lang-glow)" />
-      <text x="390" y="0" font-size="12" font-weight="bold" fill="#C50337" class="font-mono" text-anchor="end">31.8%</text>
+      <rect x="90" y="-10" height="8" rx="4" fill="#C50337" class="bar-0" filter="url(#lang-glow)" />
+      <text x="390" y="0" font-size="12" font-weight="bold" fill="#C50337" class="font-mono" text-anchor="end">25.0%</text>
+    </g>
+
+    <!-- HTML -->
+    <g class="lang-item item-2" transform="translate(0, 94)">
+      <text x="0" y="0" font-size="12" font-weight="bold" fill="#ffffff">HTML</text>
+      <rect x="90" y="-10" width="240" height="8" rx="4" fill="rgba(255,255,255,0.05)" />
+      <rect x="90" y="-10" height="8" rx="4" fill="#2E79FF" class="bar-1" filter="url(#lang-glow)" />
+      <text x="390" y="0" font-size="12" font-weight="bold" fill="#2E79FF" class="font-mono" text-anchor="end">25.0%</text>
     </g>
 
     <!-- C -->
     <g class="lang-item item-3" transform="translate(0, 120)">
-      <text x="0" y="0" font-size="12" font-weight="bold" fill="#ffffff">C / C++</text>
+      <text x="0" y="0" font-size="12" font-weight="bold" fill="#ffffff">C</text>
       <rect x="90" y="-10" width="240" height="8" rx="4" fill="rgba(255,255,255,0.05)" />
-      <rect x="90" y="-10" height="8" rx="4" fill="#FF5D82" class="bar-c" filter="url(#lang-glow)" />
-      <text x="390" y="0" font-size="12" font-weight="bold" fill="#FF5D82" class="font-mono" text-anchor="end">13.6%</text>
+      <rect x="90" y="-10" height="8" rx="4" fill="#FF5D82" class="bar-2" filter="url(#lang-glow)" />
+      <text x="390" y="0" font-size="12" font-weight="bold" fill="#FF5D82" class="font-mono" text-anchor="end">25.0%</text>
     </g>
 
-    <!-- JavaScript / TypeScript -->
+    <!-- JavaScript -->
     <g class="lang-item item-4" transform="translate(0, 146)">
-      <text x="0" y="0" font-size="12" font-weight="bold" fill="#ffffff">JS / TS</text>
+      <text x="0" y="0" font-size="12" font-weight="bold" fill="#ffffff">JavaScript</text>
       <rect x="90" y="-10" width="240" height="8" rx="4" fill="rgba(255,255,255,0.05)" />
-      <rect x="90" y="-10" height="8" rx="4" fill="#C50337" class="bar-js" filter="url(#lang-glow)" />
-      <text x="390" y="0" font-size="12" font-weight="bold" fill="#C50337" class="font-mono" text-anchor="end">9.1%</text>
+      <rect x="90" y="-10" height="8" rx="4" fill="#FFBC0A" class="bar-3" filter="url(#lang-glow)" />
+      <text x="390" y="0" font-size="12" font-weight="bold" fill="#FFBC0A" class="font-mono" text-anchor="end">25.0%</text>
     </g>
 
     <!-- Figma UI/UX -->
