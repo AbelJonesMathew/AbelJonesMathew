@@ -27,10 +27,10 @@
     .font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
     
     /* Loading language progress bars based on actual repo count */
-    @keyframes load-bar-0 { from { width: 0px; } to { width: 60px; } }
-    @keyframes load-bar-1 { from { width: 0px; } to { width: 60px; } }
-    @keyframes load-bar-2 { from { width: 0px; } to { width: 60px; } }
-    @keyframes load-bar-3 { from { width: 0px; } to { width: 60px; } }
+    @keyframes load-bar-0 { from { width: 0px; } to { width: 96px; } }
+    @keyframes load-bar-1 { from { width: 0px; } to { width: 48px; } }
+    @keyframes load-bar-2 { from { width: 0px; } to { width: 48px; } }
+    @keyframes load-bar-3 { from { width: 0px; } to { width: 48px; } }
     @keyframes load-bar-figma { from { width: 0px; } to { width: 132px; } }
 
     .bar-0 { animation: load-bar-0 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards; width: 0; }
@@ -65,7 +65,7 @@
       <text x="0" y="0" font-size="12" font-weight="bold" fill="#ffffff">Python</text>
       <rect x="90" y="-10" width="240" height="8" rx="4" fill="rgba(255,255,255,0.05)" />
       <rect x="90" y="-10" height="8" rx="4" fill="#C50337" class="bar-0" filter="url(#lang-glow)" />
-      <text x="390" y="0" font-size="12" font-weight="bold" fill="#C50337" class="font-mono" text-anchor="end">25.0%</text>
+      <text x="390" y="0" font-size="12" font-weight="bold" fill="#C50337" class="font-mono" text-anchor="end">40.0%</text>
     </g>
 
     <!-- HTML -->
@@ -73,7 +73,7 @@
       <text x="0" y="0" font-size="12" font-weight="bold" fill="#ffffff">HTML</text>
       <rect x="90" y="-10" width="240" height="8" rx="4" fill="rgba(255,255,255,0.05)" />
       <rect x="90" y="-10" height="8" rx="4" fill="#2E79FF" class="bar-1" filter="url(#lang-glow)" />
-      <text x="390" y="0" font-size="12" font-weight="bold" fill="#2E79FF" class="font-mono" text-anchor="end">25.0%</text>
+      <text x="390" y="0" font-size="12" font-weight="bold" fill="#2E79FF" class="font-mono" text-anchor="end">20.0%</text>
     </g>
 
     <!-- C -->
@@ -81,7 +81,7 @@
       <text x="0" y="0" font-size="12" font-weight="bold" fill="#ffffff">C</text>
       <rect x="90" y="-10" width="240" height="8" rx="4" fill="rgba(255,255,255,0.05)" />
       <rect x="90" y="-10" height="8" rx="4" fill="#FF5D82" class="bar-2" filter="url(#lang-glow)" />
-      <text x="390" y="0" font-size="12" font-weight="bold" fill="#FF5D82" class="font-mono" text-anchor="end">25.0%</text>
+      <text x="390" y="0" font-size="12" font-weight="bold" fill="#FF5D82" class="font-mono" text-anchor="end">20.0%</text>
     </g>
 
     <!-- JavaScript -->
@@ -89,7 +89,7 @@
       <text x="0" y="0" font-size="12" font-weight="bold" fill="#ffffff">JavaScript</text>
       <rect x="90" y="-10" width="240" height="8" rx="4" fill="rgba(255,255,255,0.05)" />
       <rect x="90" y="-10" height="8" rx="4" fill="#FFBC0A" class="bar-3" filter="url(#lang-glow)" />
-      <text x="390" y="0" font-size="12" font-weight="bold" fill="#FFBC0A" class="font-mono" text-anchor="end">25.0%</text>
+      <text x="390" y="0" font-size="12" font-weight="bold" fill="#FFBC0A" class="font-mono" text-anchor="end">20.0%</text>
     </g>
 
     <!-- Figma UI/UX -->
