@@ -1,45 +1,62 @@
-<!-- Theme-switching Banner (Toggles dark/light automatically) -->
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="banner.svg">
-  <source media="(prefers-color-scheme: light)" srcset="banner-light.svg">
-  <img alt="Abel Jones Mathew Banner" src="banner.svg" width="100%">
-</picture>
+# Abel Jones Mathew
 
-<br/>
+<p align="center">
+  <img src="./banner.svg" alt="Abel Jones Mathew Banner" width="100%" />
+</p>
 
-<!-- Grid layout for Lanyard and Stats Cards -->
-<table border="0" cellpadding="0" cellspacing="0">
+<p align="center">
+  <a href="mailto:abeljonesmathew@gmail.com"><img src="./btn-email.svg" alt="Email" height="40" /></a>
+  <a href="https://linkedin.com/in/abeljonesmathew" target="_blank"><img src="./btn-linkedin.svg" alt="LinkedIn" height="40" /></a>
+  <a href="https://abeljonesmathew.github.io" target="_blank"><img src="./btn-portfolio.svg" alt="Portfolio" height="40" /></a>
+  <a href="https://github.com/AbelJonesMathew" target="_blank"><img src="./btn-github.svg" alt="GitHub" height="40" /></a>
+</p>
+
+---
+
+## 💻 Tech Profile & Live Activity
+
+<table border="0">
   <tr>
-    <!-- Lanyard (Left Column) -->
-    <td valign="top" width="360">
-      <img src="lanyard.svg" width="340" alt="Personal ID Lanyard" />
+    <td width="30%" align="center" valign="top">
+      <img src="./lanyard.svg" alt="ID Card Lanyard" width="220" />
     </td>
-    <!-- Stats Stack (Right Column) -->
-    <td valign="top" width="560" style="padding-left: 20px;">
-      <img src="stats.svg" width="540" alt="GitHub Stats" />
-      <br/><br/>
-      <img src="langs.svg" width="540" alt="Languages Breakdown" />
-      <br/><br/>
-      <img src="trophies.svg" width="540" alt="Trophies & Achievements" />
+    <td width="70%" valign="top">
+      <h3>About Me 🚀</h3>
+      <ul>
+        <li>🎓 <strong>CS Engineering Student</strong> at SJCET</li>
+        <li>💻 Passionate about building modern, interactive web applications</li>
+        <li>🎨 Crafting beautiful, intuitive UI/UX layouts</li>
+        <li>⚡ Always learning, experimenting, and contributing</li>
+      </ul>
+      <br/>
+      <div align="center">
+        <img src="./stats.svg" alt="Abel's Real Stats" width="48%" />
+        <img src="./langs.svg" alt="Real Top Languages" width="48%" />
+      </div>
     </td>
   </tr>
 </table>
 
-<br/>
+---
 
-<!-- Interactive Social Buttons (Replace links with your actual URLs) -->
+## 🏆 Achievements & Trophies
+
 <p align="center">
-  <a href="mailto:abeljonessjcet@gmail.com">
-    <img src="btn-email.svg" height="38" alt="Email Me" />
-  </a>
-  <a href="https://www.linkedin.com/in/abel-jones-mathew-27662837a/" target="_blank">
-    <img src="btn-linkedin.svg" height="38" alt="LinkedIn" />
-  </a>
-  <a href="https://video-portfolio-lemon-nine.vercel.app/" target="_blank">
-    <img src="btn-portfolio.svg" height="38" alt="Portfolio" />
-  </a>
-  <a href="https://github.com/AbelJonesMathew" target="_blank">
-    <img src="btn-github.svg" height="38" alt="GitHub Profile" />
-  </a>
+  <img src="./trophies.svg" alt="Achievements and Trophies" width="100%" />
 </p>
 
+---
+
+## 🐍 Contribution Snake
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./snake.svg" />
+  <img alt="GitHub Contribution Snake" src="./snake.svg" width="100%" />
+</picture>
+
+---
+
+<p align="center">
+  <sub>Generated dynamically using GitHub Actions. Last update triggered on schedule.</sub>
+</p>
