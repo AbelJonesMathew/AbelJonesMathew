@@ -21,7 +21,7 @@
 
 <p align="center">
   <a href="mailto:abeljonesmathew@gmail.com"><img src="./btn-email.svg" alt="Email" height="40" /></a>
-  <a href="https://linkedin.com/in/abeljonesmathew" target="_blank"><img src="./btn-linkedin.svg" alt="LinkedIn" height="40" /></a>
+  <a href="www.linkedin.com/in/abel-jones-mathew" target="_blank"><img src="./btn-linkedin.svg" alt="LinkedIn" height="40" /></a>
   <a href="https://abeljonesmathew.github.io" target="_blank"><img src="./btn-portfolio.svg" alt="Portfolio" height="40" /></a>
   <a href="https://github.com/AbelJonesMathew" target="_blank"><img src="./btn-github.svg" alt="GitHub" height="40" /></a>
 </p>
