@@ -19,17 +19,15 @@
 
 <br/>
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AbelJonesMathew/AbelJonesMathew/output/github-contribution-grid-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/AbelJonesMathew/AbelJonesMathew/output/github-contribution-grid-snake.svg" />
+  <img alt="GitHub Contribution Snake" src="https://raw.githubusercontent.com/AbelJonesMathew/AbelJonesMathew/output/github-contribution-grid-snake.svg" width="100%" />
+</picture>
+
 <p align="center">
   <a href="mailto:abeljonesmathew@gmail.com"><img src="./btn-email.svg" alt="Email" height="40" /></a>
   <a href="https://linkedin.com/in/abeljonesmathew" target="_blank"><img src="./btn-linkedin.svg" alt="LinkedIn" height="40" /></a>
   <a href="https://abeljonesmathew.github.io" target="_blank"><img src="./btn-portfolio.svg" alt="Portfolio" height="40" /></a>
   <a href="https://github.com/AbelJonesMathew" target="_blank"><img src="./btn-github.svg" alt="GitHub" height="40" /></a>
 </p>
-
-<br/>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AbelJonesMathew/AbelJonesMathew/output/github-contribution-grid-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/AbelJonesMathew/AbelJonesMathew/output/github-contribution-grid-snake.svg" />
-  <img alt="GitHub Contribution Snake" src="https://raw.githubusercontent.com/AbelJonesMathew/AbelJonesMathew/output/github-contribution-grid-snake.svg" width="100%" />
-</picture>
