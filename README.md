@@ -6,13 +6,13 @@
 
 <table border="0" width="100%">
   <tr>
-    <td width="45%" align="center" valign="middle">
-      <img src="./lanyard.svg" alt="ID Card Lanyard" width="300" />
+    <td width="48%" align="center" valign="middle">
+      <img src="./lanyard.svg" alt="ID Card Lanyard" width="85%" />
     </td>
-    <td width="55%" align="center" valign="middle">
-      <img src="./stats.svg" alt="Abel's Real Stats" width="400" />
+    <td width="52%" align="center" valign="middle">
+      <img src="./stats.svg" alt="Abel's Real Stats" width="95%" />
       <br/><br/>
-      <img src="./langs.svg" alt="Real Top Languages" width="400" />
+      <img src="./langs.svg" alt="Real Top Languages" width="95%" />
     </td>
   </tr>
 </table>
