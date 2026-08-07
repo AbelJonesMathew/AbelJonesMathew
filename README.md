@@ -13,6 +13,8 @@
       <img src="./stats.svg" alt="Abel's Real Stats" width="95%" />
       <br/><br/>
       <img src="./langs.svg" alt="Real Top Languages" width="95%" />
+      <br/><br/>
+      <img src="./trophies.svg" alt="Achievements and Trophies" width="95%" />
     </td>
   </tr>
 </table>
