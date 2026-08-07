@@ -6,10 +6,11 @@ import urllib.error
 import subprocess
 
 def fetch_json(url):
-    req = urllib.request.Request(
-        url, 
-        headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
-    )
+    token = os.environ.get("GITHUB_TOKEN")
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
+    if token:
+        headers['Authorization'] = f'token {token}'
+    req = urllib.request.Request(url, headers=headers)
     try:
         with urllib.request.urlopen(req) as response:
             return json.loads(response.read().decode('utf-8'))
@@ -18,10 +19,11 @@ def fetch_json(url):
         return None
 
 def fetch_html(url):
-    req = urllib.request.Request(
-        url, 
-        headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
-    )
+    token = os.environ.get("GITHUB_TOKEN")
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
+    if token:
+        headers['Authorization'] = f'token {token}'
+    req = urllib.request.Request(url, headers=headers)
     try:
         with urllib.request.urlopen(req) as response:
             return response.read().decode('utf-8')
