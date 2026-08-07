@@ -2,8 +2,6 @@
   <img src="./banner.svg" alt="Banner" width="100%" />
 </p>
 
-<br/>
-
 <table border="0" width="100%">
   <tr>
     <td width="48%" align="center" valign="middle">
@@ -11,15 +9,15 @@
     </td>
     <td width="52%" align="center" valign="middle">
       <img src="./stats.svg" alt="Abel's Real Stats" width="95%" />
-      <br/><br/>
+      <br/>
       <img src="./langs.svg" alt="Real Top Languages" width="95%" />
-      <br/><br/>
+      <br/>
       <img src="./trophies.svg" alt="Achievements and Trophies" width="95%" />
     </td>
   </tr>
 </table>
 
-<br/><br/>
+<br/>
 
 <p align="center">
   <a href="mailto:abeljonesmathew@gmail.com"><img src="./btn-email.svg" alt="Email" height="40" /></a>
