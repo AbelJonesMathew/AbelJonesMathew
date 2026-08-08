@@ -26,6 +26,32 @@ jobs:
             dist/github-contribution-grid-snake.svg?color_snake=#ff4b91&color_dots=#0a0410,#3a1452,#7a00f2,#b800c4,#ff4b91
             dist/github-contribution-grid-snake-dark.svg?color_snake=#ff4b91&color_dots=#0a0410,#3a1452,#7a00f2,#b800c4,#ff4b91
             
+      # Strip out the Less/More legend group from the SVGs
+      - name: Strip legend group from SVGs
+        run: |
+          python -c "
+          import xml.etree.ElementTree as ET
+          import glob
+          for filepath in glob.glob('dist/*.svg'):
+              ET.register_namespace('', 'http://www.w3.org/2000/svg')
+              tree = ET.parse(filepath)
+              root = tree.getroot()
+              parent_map = {c: p for p in root.iter() for c in p}
+              legend_group = None
+              for elem in root.iter():
+                  if elem.tag.endswith('text') and elem.text and elem.text.strip() == 'Less':
+                      parent = parent_map.get(elem)
+                      if parent is not None and parent.tag.endswith('g'):
+                          legend_group = parent
+                          break
+              if legend_group is not None:
+                  grandparent = parent_map.get(legend_group)
+                  if grandparent is not None:
+                      grandparent.remove(legend_group)
+                      tree.write(filepath, encoding='utf-8', xml_declaration=True)
+                      print(f'Successfully removed legend from {filepath}')
+          "
+
       # Push the content of <build_dir> to a branch
       - name: Deploy to output branch
         uses: crazy-max/ghaction-github-pages@v4
