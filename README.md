@@ -25,7 +25,7 @@
   <img alt="GitHub Contribution Snake" src="https://raw.githubusercontent.com/AbelJonesMathew/AbelJonesMathew/output/github-contribution-grid-snake.svg" width="100%" />
 </picture>
 
-<div align="center" style="margin-top: -15px;">
+<div align="center" style="margin-top: -30px;">
   <a href="mailto:abeljonesmathew@gmail.com"><img src="./btn-email.svg" alt="Email" height="40" style="margin: 0 5px;" /></a>
   <a href="https://linkedin.com/in/abeljonesmathew" target="_blank"><img src="./btn-linkedin.svg" alt="LinkedIn" height="40" style="margin: 0 5px;" /></a>
   <a href="https://abeljonesmathew.github.io" target="_blank"><img src="./btn-portfolio.svg" alt="Portfolio" height="40" style="margin: 0 5px;" /></a>
