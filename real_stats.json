@@ -1,11 +1,12 @@
 {
-    "public_repos": 9,
-    "followers": 125,
-    "contributions": 109,
+    "public_repos": 10,
+    "followers": 126,
+    "contributions": 115,
     "languages": {
-        "Python": 42.9,
-        "JavaScript": 28.6,
-        "HTML": 14.3,
-        "C": 14.3
+        "Python": 37.5,
+        "JavaScript": 25.0,
+        "HTML": 12.5,
+        "Java": 12.5,
+        "C": 12.5
     }
 }
